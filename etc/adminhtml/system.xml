@@ -2,20 +2,15 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="cnnb_integration" translate="label" sortOrder="4">
-            <label>CNNB Integration</label>
-        </tab>
-
-        <section id="cnnb_store_alias" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Store Alias</label>
-            <tab>cnnb_integration</tab>
+        <section id="proseno_store_alias" translate="label" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Proseno Store Alias</label>
+            <tab>general</tab>
             <resource>Proseno_StoreAlias::config</resource>
-
             <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General settings</label>
                 <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
             </group>
         </section>

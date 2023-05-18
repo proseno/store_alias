@@ -8,7 +8,7 @@ use Magento\Store\App\Request\PathInfoProcessor;
 use Magento\Store\Model\StoreManagerInterface;
 use Proseno\StoreAlias\Model\Config;
 
-readonly class RemoveStoreAliasFromPath
+class RemoveStoreAliasFromPath
 {
     /**
      * @param Config $configHelper
@@ -16,9 +16,9 @@ readonly class RemoveStoreAliasFromPath
      * @param StoreManagerInterface $storeManager
      */
     public function __construct(
-        private Config                $configHelper,
-        private StoreResolver         $storeHelper,
-        private StoreManagerInterface $storeManager
+        readonly private Config                $configHelper,
+        readonly private StoreResolver         $storeHelper,
+        readonly private StoreManagerInterface $storeManager
     ) {
     }
 

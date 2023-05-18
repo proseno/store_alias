@@ -1,13 +1,21 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Store\Model\Store" type="Proseno\StoreAlias\Model\Store"/>
-
     <type name="Magento\Store\App\Request\PathInfoProcessor">
         <plugin name="remove_store_alias_from_path"
                 type="Proseno\StoreAlias\Plugin\RemoveStoreAliasFromPath"
                 sortOrder="50"/>
     </type>
-    <preference for="Magento\Backend\Block\System\Store\Edit\Form\Store"
-                type="Proseno\StoreAlias\Block\System\Store\Edit\Form\Store"/>
+
+    <type name="Magento\Store\Model\Store">
+        <plugin name="update_path_with_alias_plugin"
+                type="Proseno\StoreAlias\Plugin\UpdatePathWithAliasPlugin"
+                sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Backend\Block\System\Store\Edit\Form\Store">
+        <plugin name="add_alias_field_plugin"
+                type="Proseno\StoreAlias\Plugin\AddAliasFieldPlugin"
+                sortOrder="10"/>
+    </type>
 </config>

@@ -8,7 +8,7 @@ use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
-    private const IS_ENABLED_CONFIG_PATH = "cnnb_store_alias/general/enable";
+    private const IS_ENABLED_CONFIG_PATH = "proseno_store_alias/general/enable";
 
     /**
      * @param ScopeConfigInterface $scopeConfig

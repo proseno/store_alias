@@ -27,7 +27,7 @@ class StoreResolver
      */
     public function getStoreByAlias(string $alias): ?Store
     {
-        $serverName = $this->request->getServer('SERVER_NAME');
+        $serverName = $this->request->getUri()->getHost();
 
         $collection = $this->collectionFactory->create();
         /** @var Store[] $items */
