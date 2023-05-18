@@ -1,0 +1,10 @@
+{
+    "store": {
+        "column": {
+            "alias": true
+        },
+        "constraint": {
+            "STORE_ALIAS": true
+        }
+    }
+}
